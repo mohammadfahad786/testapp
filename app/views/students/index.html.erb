@@ -1,0 +1,31 @@
+<%=link_to 'Add New Student', new_student_path%>
+<br>
+<br>
+<br>
+<h1>Listing Students</h1>
+ 
+<table>
+  <tr>
+    <th style="border: 1px solid black">Student Name</th>
+    <th style="border: 1px solid black">Roll No</th>
+    <th style="border: 1px solid black">Semester</th>
+    <th style="border: 1px solid black">Show Student</th>
+    <th style="border: 1px solid black">Edit Student</th>
+    <th style="border: 1px solid black">Delete Student</th>
+
+
+  </tr>
+ 
+  <% @students.each do |student| %>
+    <tr>
+      <td style="border: 1px solid black"><%= student.name %></td>
+      <td style="border: 1px solid black"><%= student.roll_no %></td>
+      <td style="border: 1px solid black"><%= student.semster %></td>
+      <td style="border: 1px solid black"><%= link_to 'Show', student_path(student) %></td>
+      <td style="border: 1px solid black"><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td style="border: 1px solid black"><%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+    </tr>
+  <% end %>
+</table>

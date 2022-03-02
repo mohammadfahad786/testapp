@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <% if customer_signed_in? %>
+   Signing in as <%= current_customer.email%>
+   <%= link_to "Sign out", destroy_customer_session_path, method: "delete"%>
+   <%else%>
+   <%= link_to "Sign Up",  new_customer_registration_path %> or <%= link_to "Sign in", new_customer_session_path%> 
+   <%end%>
+
+<br>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <br>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<p>
+  <strong>Student Name:</strong>
+  <%= @student.name %>
+</p>
+ 
+<p>
+  <strong>Student Roll No:</strong>
+  <%= @student.roll_no  %>
+</p>
+<p>
+  <strong>Student Semester:</strong>
+  <%= @student.semster  %>
+</p>
+<br>
+<h2>Teacher's Comments About you</h2>
+<%= render @student.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', students_path %>
+

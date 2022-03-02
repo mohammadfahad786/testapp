@@ -1,0 +1,2 @@
+@after = ->
+      alert 'fahad'

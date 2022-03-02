@@ -1,0 +1,7 @@
+<p><strong>Teacher's Name : </strong> <%= comment.teacher%> </p>
+<p><strong>Teacher's Comment : </strong> <%= comment.comment%> </p>
+<p>
+  <%= link_to 'Delete Comment', [comment.student, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

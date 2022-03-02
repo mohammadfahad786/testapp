@@ -1,0 +1,29 @@
+<% if @student.errors.any? %>
+  <h2><%= pluralize(@student.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+<% end %>
+<%= form_with model: @student, local: true do |form| %>
+    <p>
+        <%= form.label :Name %><br>
+        <%= form.text_field :name %>
+    </p>
+ 
+  <p>
+    <%= form.label :Roll_no %><br>
+    <%= form.text_field :roll_no %>
+  </p>
+   <p>
+    <%= form.label :Semester %><br>
+    <%= form.text_field :semster %>
+  </p>
+ 
+  <p>
+    <%= form.submit :Submit %>
+  </p>
+
+
+ <% end %>
